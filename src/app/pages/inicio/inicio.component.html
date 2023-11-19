@@ -1,0 +1,64 @@
+<div class="container px-4 py-5" id="hanging-icons">
+    <h2 class="pb-2 border-bottom">Principales busquedas</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <div>
+                <svg width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <use xlink:href="#llave"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">&nbsp; Por profesion</h3>
+                <p>Los profesionales mas buscados a un solo click !</p>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" [routerLink]="['/resultados']" type="button"
+                        style="margin-right: 4px;">Electricistas</button>
+                    <button class="btn btn-primary" [routerLink]="['/resultados']" type="button"
+                        style="margin-right: 4px;">Plomeros</button>
+                    <button class="btn btn-primary" [routerLink]="['/resultados']" type="button"
+                        style="margin-right: 4px;">Herreros</button>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div>
+                <svg width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <use xlink:href="#horario" />
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">&nbsp; Por horario</h3>
+                <p>Busca los profesionales que esten disponibles en el horario que vos podes.</p>
+                <button class="btn btn-primary" type="button" style="margin-right: 4px;">Mañana</button>
+                <button class="btn btn-primary" type="button" style="margin-right: 4px;">Tarde</button>
+                <button class="btn btn-primary" type="button" style="margin-right: 4px;">Noche</button>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div>
+                <svg width="32" height="32" viewBox="0 0 16 16">
+                    <use xlink:href="#calificacion"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">&nbsp; Por calificaciones</h3>
+                <p>Los mejores profesionales a un click de distancia !</p>
+                <button class="btn btn-primary" type="button" style="margin-right: 4px;">3
+                    <svg width="20px" height="20px">
+                        <use xlink:href="#star"></use>
+                    </svg>
+                </button>
+                <button class="btn btn-primary" type="button" style="margin-right: 4px;">4
+                    <svg width="20px" height="20px">
+                        <use xlink:href="#star"></use>
+                    </svg>
+                </button>
+                <button class="btn btn-primary" type="button" style="margin-right: 4px;">5
+                    <svg width="20px" height="20px">
+                        <use xlink:href="#star"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
