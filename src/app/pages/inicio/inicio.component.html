@@ -1,3 +1,12 @@
+<svg class="d-none">
+    <symbol id="llave">
+        <path
+            d="M6.705 8.139a.25.25 0 0 0-.288-.376l-1.5.5.159.474.808-.27-.595.894a.25.25 0 0 0 .287.376l.808-.27-.595.894a.25.25 0 0 0 .287.376l1.5-.5-.159-.474-.808.27.596-.894a.25.25 0 0 0-.288-.376l-.808.27.596-.894Z" />
+        <path
+            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm-6.202-4.751 1.988-1.657a4.5 4.5 0 0 1 7.537-4.623L7.497 6.5l1 2.5 1.333 3.11c-.56.251-1.18.39-1.833.39a4.49 4.49 0 0 1-1.592-.29L4.747 14.2a7.031 7.031 0 0 1-2.949-2.951ZM12.496 8a4.491 4.491 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11c.027.2.04.403.04.61Z" />
+    </symbol>
+</svg>
+
 <div class="container px-4 py-5" id="hanging-icons">
     <h2 class="pb-2 border-bottom">Principales busquedas</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
@@ -22,36 +31,36 @@
         </div>
         <div class="col d-flex align-items-start">
             <div>
-                <svg width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                    <use xlink:href="#horario" />
-                </svg>
+                <div class="bi bi-alarm" style="font-size: 32px;"></div>
             </div>
             <div>
                 <h3 class="fs-2 text-body-emphasis">&nbsp; Por horario</h3>
                 <p>Busca los profesionales que esten disponibles en el horario que vos podes.</p>
-                <button class="btn btn-primary" type="button" style="margin-right: 4px;">Mañana</button>
-                <button class="btn btn-primary" type="button" style="margin-right: 4px;">Tarde</button>
-                <button class="btn btn-primary" type="button" style="margin-right: 4px;">Noche</button>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">Mañana</button>
+                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">Tarde</button>
+                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">Noche</button>
+                </div>
             </div>
         </div>
         <div class="col d-flex align-items-start">
             <div>
-                <svg width="32" height="32" viewBox="0 0 16 16">
-                    <use xlink:href="#calificacion"></use>
-                </svg>
+                <div class="bi bi-hand-thumbs-up" style="font-size: 32px;"></div>
             </div>
             <div>
                 <h3 class="fs-2 text-body-emphasis">&nbsp; Por calificaciones</h3>
                 <p>Los mejores profesionales a un click de distancia !</p>
-                <button class="btn btn-primary" type="button" style="margin-right: 4px;">3
-                    <i class="bi calificacion bi-star-fill"></i>
-                </button>
-                <button class="btn btn-primary" type="button" style="margin-right: 4px;">4
-                    <i class="bi calificacion bi-star-fill"></i>
-                </button>
-                <button class="btn btn-primary" type="button" style="margin-right: 4px;">5
-                    <i class="bi calificacion bi-star-fill"></i>
-                </button>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">3
+                        <i class="bi calificacion bi-star-fill"></i>
+                    </button>
+                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">4
+                        <i class="bi calificacion bi-star-fill"></i>
+                    </button>
+                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">5
+                        <i class="bi calificacion bi-star-fill"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
