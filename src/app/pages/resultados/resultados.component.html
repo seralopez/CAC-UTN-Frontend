@@ -16,11 +16,11 @@
 <div class="container px-4 py-5" id="custom-cards">
     <h2 class="pb-2 border-bottom">Resultados</h2>
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        <div class="col">
+        <div class="col" *ngFor="let provedor of listaProvedores">
             <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg cartas" style="
                 background-image: url('/assets/img/electricista1.png');">
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Sergio Lopez</h3>
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{provedor?.usuario_nombre}}</h3>
                     <ul class="d-flex list-unstyled mt-auto">
                         <li class="me-auto">
                             3 <i class="bi calificacion bi-star-fill"></i>
