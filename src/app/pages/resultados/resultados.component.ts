@@ -10,19 +10,17 @@ import { ApiService } from 'src/app/services/api.service';
 export class ResultadosComponent implements OnInit {
   listaProvedores: IServices[] = []
   loading: boolean = true
-
-  private _apiService = inject(ApiService)
+  constructor(private _apiService: ApiService) { }
 
   ngOnInit(): void {
     this._apiService.getPrestadores().subscribe({
       next: (data: IServices[]) => {
-        this.listaProvedores = data
-        this.loading = false
+        this.listaProvedores = data;
+        this.loading = false;
       },
       error: (error: any) => {
-        console.log(error)
-        this.loading = false
+        this.loading = false;
       },
-    })
+    });
   }
 }

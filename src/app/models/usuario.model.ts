@@ -4,7 +4,7 @@ export interface usuario {
     usuario_apellido: string;
     usuario_pass: string;
     usuario_correo: string;
-    usuario_ultConec: Date;
+    usuario_ultConec: string;
     usuario_foto: number;
     usuario_rol: number;
     servicios_usuario: number;
