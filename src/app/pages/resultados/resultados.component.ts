@@ -8,13 +8,14 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./resultados.component.css']
 })
 export class ResultadosComponent implements OnInit {
-  listaProvedores: IServices[] = []
-  loading: boolean = true
+  public listaProvedores: IServices[] = []
+  public loading: boolean = true
   constructor(private _apiService: ApiService) { }
 
   ngOnInit(): void {
     this._apiService.getPrestadores().subscribe({
       next: (data: IServices[]) => {
+        console.log(data)
         this.listaProvedores = data;
         this.loading = false;
       },
