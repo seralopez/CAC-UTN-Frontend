@@ -37,9 +37,12 @@
                 <h3 class="fs-2 text-body-emphasis">&nbsp; Por horario</h3>
                 <p>Busca los profesionales que esten disponibles en el horario que vos podes.</p>
                 <div class="d-grid gap-2 d-md-block">
-                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">Mañana</button>
-                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">Tarde</button>
-                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">Noche</button>
+                    <button class="btn btn-primary" type="button" (click)="buscar('horario','Mañana')"
+                        style="margin-right: 4px;">Mañana</button>
+                    <button class="btn btn-primary" type="button" (click)="buscar('horario','Tarde')"
+                        style="margin-right: 4px;">Tarde</button>
+                    <button class="btn btn-primary" type="button" (click)="buscar('horario','Noche')"
+                        style="margin-right: 4px;">Noche</button>
                 </div>
             </div>
         </div>
@@ -51,13 +54,16 @@
                 <h3 class="fs-2 text-body-emphasis">&nbsp; Por calificaciones</h3>
                 <p>Los mejores profesionales a un click de distancia !</p>
                 <div class="d-grid gap-2 d-md-block">
-                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">3
+                    <button class="btn btn-primary" type="button" (click)="buscar('calificacion','3')"
+                        style="margin-right: 4px;">3
                         <i class="bi calificacion bi-star-fill"></i>
                     </button>
-                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">4
+                    <button class="btn btn-primary" type="button" (click)="buscar('calificacion','4')"
+                        style="margin-right: 4px;">4
                         <i class="bi calificacion bi-star-fill"></i>
                     </button>
-                    <button class="btn btn-primary" type="button" style="margin-right: 4px;">5
+                    <button class="btn btn-primary" type="button" (click)="buscar('calificacion','5')"
+                        style="margin-right: 4px;">5
                         <i class="bi calificacion bi-star-fill"></i>
                     </button>
                 </div>
