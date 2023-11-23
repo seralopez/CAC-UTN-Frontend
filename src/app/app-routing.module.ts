@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: 'resultados', component: ResultadosComponent },
+  { path: 'prestadores', component: ResultadosComponent },
+  { path: 'prestadores/:descripcion', component: ResultadosComponent },
   { path: '**', redirectTo: '' }
 ];
 

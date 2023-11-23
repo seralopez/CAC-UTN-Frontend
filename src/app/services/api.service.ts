@@ -12,8 +12,8 @@ export class ApiService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  public getPrestadores(): Observable<IServices[]> {
-    return this._httpClient.get<IServices[]>(`${this.urlBase}/prestadores`);
+  public getPrestadores(descripcion: String): Observable<IServices[]> {
+    return this._httpClient.get<IServices[]>(`${this.urlBase}/prestadores/${descripcion}`);
   }
 
   public getUsuario(id: number): Observable<IServices[]> {
