@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 })
 export class InicioComponent {
   constructor(private _router: Router) { }
-  buscar(descripcion: string) {
-
-    this._router.navigate(['/prestadores', descripcion])
+  buscar(datos: string, valor: string) {
+    this._router.navigate(['/prestadores', datos, valor])
   }
 }

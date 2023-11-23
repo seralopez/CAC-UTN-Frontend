@@ -45,7 +45,7 @@ export class ResultadosComponent implements OnInit {
 
     this._activatedRoute.params.subscribe({
       next: (params: Params) => {
-        this._apiService.getPrestadores(String(params['descripcion'])).subscribe({
+        this._apiService.getPrestadores(String(params['datos']), String(params['valor'])).subscribe({
           next: (data: IServices[]) => {
             this.listaProvedores = data
             this.loading = false
