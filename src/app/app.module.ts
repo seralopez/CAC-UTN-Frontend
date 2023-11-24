@@ -7,7 +7,6 @@ import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
-import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
@@ -16,8 +15,7 @@ import { HttpClientModule } from '@angular/common/http'
     ResultadosComponent,
     PerfilComponent,
     ContactoComponent,
-    InicioComponent,
-    HomeComponent
+    InicioComponent
   ],
   imports: [
     BrowserModule,
