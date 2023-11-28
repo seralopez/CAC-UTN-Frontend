@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IServices } from "../models/servicio.model"
+import { Perfil } from "../models/perfil.model"
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ApiService {
   }
 
   public getUsuario(id: number): Observable<IServices[]> {
-    return this._httpClient.get<IServices[]>(`${this.urlBase}/usuario/${id}`);
+    return this._httpClient.get<IServices[]>(`${this.urlBase}/perfil/${id}`);
   }
 
 

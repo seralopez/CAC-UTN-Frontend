@@ -5,3 +5,19 @@
     width: 1em;
     height: 1em;
 }
+
+.cartas {
+    background-color: black;
+    background-size: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}

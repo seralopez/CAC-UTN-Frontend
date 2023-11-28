@@ -17,6 +17,6 @@ export interface IServices {
     datos_calle: string;
     datos_gps: string;
     datos_disponibilidad: string;
-    datos_servicios: number;
+    datos_descripcion: string;
     datos_calificacion: number;
 }

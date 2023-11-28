@@ -1,36 +1,57 @@
-<div class="container" style="margin: 25px;">
-  <div class="card">
-    <div class="row">
-      <div class="col">
-        <img src="/assets/img/Electricista.png" style="height: 100%; width: 100%;" class="img-fluid rounded-start"
-          alt="Foto perfil">
-      </div>
-      <div class="col">
-        <div class="card-body">
-
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item text-center">Mario Bros</li>
-            <li class="list-group-item">Telefono : </li>
-            <li class="list-group-item">Correo : </li>
-            <li class="list-group-item">Calificacion : </li>
-            <li class="list-group-item">Disponibilidad : </li>
-            <li class="list-group-item"></li>
-          </ul>
-          <div class="text-center">
-            <a class="icon-link icon-link-hover" href="#">
-              <i class="bi bi-arrow-left flecha"></i>
-              Anterior
-            </a>
-
-            <button type="button" class="btn btn-success">Contratar</button>
-
-            <a class="icon-link icon-link-hover" href="#">
-              Siguiente
-              <i class="bi bi-arrow-right flecha"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"
+      aria-current="true"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/assets/img/Electricista.png" class="d-block w-50" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/img/Plomero.png" class="d-block w-50" alt="...">
+    </div>
+    <div class="carousel-item" style="max-height: 400px;">
+      <img src="/assets/img/Herrero.png" class="d-block w-50" alt="...">
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="card-body" *ngFor="let servicio of dataPerfil">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-center">
+      <h2>{{servicio?.usuario_nombre}} {{servicio?.usuario_apellido}}</h2>
+    </li>
+    <li class="list-group-item"><i class="bi bi-phone">&nbsp;</i>Telefono : {{servicio?.datos_telefono}}</li>
+    <li class="list-group-item"><i class="bi bi-envelope-at">&nbsp;</i>Correo : {{servicio?.usuario_correo}}</li>
+    <li class="list-group-item"><i class="bi calificacion bi-star-fill">&nbsp;</i>Calificacion :
+      {{servicio?.datos_calificacion}}</li>
+    <li class="list-group-item"><i class="bi bi-clock-history horario">&nbsp;</i>Disponibilidad :
+      {{servicio?.datos_disponibilidad}}</li>
+    <li class="list-group-item"><i class="bi bi-file-earmark-person">&nbsp;</i>{{servicio?.datos_descripcion}}</li>
+  </ul>
+</div>
+<div class="card-footer text-body-secondary text-center">
+
+
+  <a class="card-link icon-link icon-link-hover align-middle" href="#">
+    <i class="bi bi-arrow-left flecha"></i>
+    Anterior
+  </a>
+
+  <button type="button" class=" card-link btn btn-success align-middle" style="margin: 25px;">Contratar</button>
+
+  <a class="card-link icon-link icon-link-hover align-middle" href="#">
+    Siguiente
+    <i class="bi bi-arrow-right flecha"></i>
+  </a>
 </div>

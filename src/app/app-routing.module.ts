@@ -8,7 +8,7 @@ import { ResultadosComponent } from './pages/resultados/resultados.component';
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'contacto', component: ContactoComponent },
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'perfil/:id', component: PerfilComponent },
   { path: 'prestadores', component: ResultadosComponent },
   { path: 'prestadores/:datos/:valor', component: ResultadosComponent },
   { path: '**', redirectTo: '' }

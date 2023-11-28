@@ -2,24 +2,26 @@
     <h2 class="pb-2 border-bottom">Resultados</h2>
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
         <div class="col" *ngFor="let servicio of listaProvedores">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg cartas" style="
+            <a href="/perfil/{{servicio?.usuario_id}}">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg cartas" style="
                 background-image: url('/assets/img/{{servicio?.servicios_nombre}}.png');">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{servicio?.usuario_nombre}}
-                        {{servicio?.usuario_apellido}}</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                        <li class="me-auto">
-                            {{servicio?.datos_calificacion}} <i class="bi calificacion bi-star-fill"></i>
-                        </li>
-                        <li class="d-flex align-items-center me-3">
-                            <i class="bi bi-geo geo">&nbsp;{{servicio?.datos_gps}} km</i>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="bi bi-clock-history horario">&nbsp;{{servicio?.datos_disponibilidad}}</i>
-                        </li>
-                    </ul>
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{servicio?.usuario_nombre}}
+                            {{servicio?.usuario_apellido}}</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                {{servicio?.datos_calificacion}} <i class="bi calificacion bi-star-fill"></i>
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <i class="bi bi-geo geo">&nbsp;{{servicio?.datos_gps}} km</i>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-clock-history horario">&nbsp;{{servicio?.datos_disponibilidad}}</i>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
 
     </div>
