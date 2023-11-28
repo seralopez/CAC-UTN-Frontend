@@ -4,7 +4,7 @@ export interface IServices {
     usuario_apellido: string;
     usuario_correo: string;
     usuario_ultConec: string;
-    usuario_foto: number;
+    usuario_foto: string;
     usuario_rol: number;
     servicios_usuario: number;
     servicios_nombre: string;
@@ -19,4 +19,9 @@ export interface IServices {
     datos_disponibilidad: string;
     datos_descripcion: string;
     datos_calificacion: number;
+    datos_fotos: DatosFoto[];
+}
+
+export interface DatosFoto {
+    url: string;
 }
