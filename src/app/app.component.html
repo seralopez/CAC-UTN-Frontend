@@ -45,12 +45,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <form class="container-fluid">
+
+        <form [formGroup]="formBuscador" (ngSubmit)="enviarInput($event)" class="container-fluid">
           <div class="input-group">
             <button class="input-group-text" id="basic-addon1" style="font-size: small;">
               <b class="bi bi-geo-alt" style="font-size: 16px;"></b>&nbsp; Lanus</button>
             <input type="text" class="form-control" placeholder="Servicios a buscar..." aria-label="Username"
-              aria-describedby="basic-addon1">
+              aria-describedby="basic-addon1" formControlName="buscar">
             <button class="input-group-text" id="btn-input">
               <i class="bi bi-search"></i>
             </button>
