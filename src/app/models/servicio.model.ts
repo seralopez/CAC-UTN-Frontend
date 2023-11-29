@@ -23,5 +23,5 @@ export interface IServices {
 }
 
 export interface DatosFoto {
-    url: string;
+    url: [];
 }
