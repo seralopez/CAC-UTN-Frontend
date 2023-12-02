@@ -33,7 +33,8 @@ export class ResultadosComponent implements OnInit {
   //servicio?: IServices
   public listaProvedores: IServices[] = []
   loading: boolean = true
-  error: string = ''
+  error: boolean = false
+  errorMsg: string = ''
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -51,13 +52,15 @@ export class ResultadosComponent implements OnInit {
             this.loading = false
           },
           error: (error: any) => {
-            this.error = error.error.msg
             console.log(error.error.msg)
+            this.errorMsg = error.error.msg
+            this.error = true
           }
         })
       },
       error: (error: any) => {
-        console.log(error.error.msg)
+        this.errorMsg = error.msg
+        this.error = true
       }
     })
   }

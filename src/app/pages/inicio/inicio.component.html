@@ -71,3 +71,37 @@
         </div>
     </div>
 </div>
+
+<script>
+    window.onload = showPosition();
+
+    function fonctionTest(me) {
+        if (document.getElementById(me).checked) {
+
+
+            var li = document.createElement("li");
+            li.setAttribute("id", me + 'op');
+            li.setAttribute("class", "badge badge-secondary");
+
+            li.innerText = me;
+            var brr = document.createElement("brr");
+            li.appendChild(brr);
+
+            var ul = document.getElementById("list_i");
+            ul.appendChild(li);
+
+        } else {
+            var ul = document.getElementById(me + 'op');
+            ul.remove();
+        }
+    }
+
+    function showPosition() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var positionInfo = position.coords.latitude + "," + position.coords.longitude;
+                document.getElementById("result_g").value = positionInfo;
+            });
+        }
+    }
+</script>

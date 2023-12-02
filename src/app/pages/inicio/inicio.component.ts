@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
+  loading: boolean = true
   constructor(private _router: Router) { }
   buscar(datos: string, valor: string) {
     this._router.navigate(['/prestadores', datos, valor])

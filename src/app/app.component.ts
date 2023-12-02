@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { IServices } from './models/servicio.model';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ApiService } from './services/api.service';
 
 @Component({
@@ -22,35 +22,12 @@ export class AppComponent {
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _apiService: ApiService
-
+    private _apiService: ApiService,
+    private _router: Router
   ) { }
-
-
-
 
   enviarInput(event: Event) {
     event.preventDefault();
-
-    this._activatedRoute.params.subscribe({
-      next: (params: Params) => {
-        this._apiService.getPrestadores('buscador', String(this.formBuscador.value.buscar)).subscribe({
-          next: (data: IServices[]) => {
-            this.listaProvedores = data
-            this.loading = false
-          },
-          error: (error: any) => {
-            this.error = error.error.msg
-            console.log(error.error.msg)
-          }
-        })
-      },
-      error: (error: any) => {
-        console.log(error.error.msg)
-      }
-    })
-
-
-
+    this._router.navigate(['/prestadores', 'buscador', this.formBuscador.value.buscar])
   }
 }
