@@ -24,5 +24,9 @@
             </a>
         </div>
     </div>
-    <span *ngIf="error" class="badge text-bg-danger"><i class="bi bi-dash-circle-fill"></i> {{errorMsg}}</span>
-</div>
+    <div *ngIf="error" style="align-items: center;">
+        <p><span class="badge text-bg-danger">{{errorMsg}}</span></p>
+        <p>· Revisá la ortografía de la palabra.</p>
+        <p>· Utilizá palabras más genéricas o menos palabras.</p>
+        <p>· Navegá por las categorías para encontrar un producto similar</p>
+    </div>

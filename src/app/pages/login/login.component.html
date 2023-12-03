@@ -1,0 +1,28 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Ingresá a tu cuenta</h1>
+            <p class="col-lg-10 fs-4">¡Hola! Accedé y encontrá al profesional que buscás</p>
+            <img src="/assets/img/work.png" alt="Foto login">
+            <img src="/assets/img/work2.png" alt="Foto login">
+            <img src="/assets/img/work3.png" alt="Foto login">
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" [(ngModel)]="email" name="email"
+                        placeholder="iservices@iservices.com" required="required">
+                    <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" [(ngModel)]="password" name="password"
+                        placeholder="Password" required="required">
+                    <label for="floatingPassword">Contraseña</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="login()">Ingresar</button>
+                <hr class="my-4">
+                <a class="btn-secondary text-end">Olvidaste tu contraseña?</a>
+            </form>
+        </div>
+    </div>
+</div>

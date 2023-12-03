@@ -4,10 +4,12 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'perfil/:id', component: PerfilComponent },
   { path: 'prestadores', component: ResultadosComponent },
   { path: 'prestadores/:datos/:valor', component: ResultadosComponent },

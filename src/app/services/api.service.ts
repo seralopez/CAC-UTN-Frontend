@@ -21,5 +21,11 @@ export class ApiService {
     return this._httpClient.get<IServices[]>(`${this.urlBase}/perfil/${id}`);
   }
 
+  public getGeo() {
+    return this._httpClient.get('https://ipgeolocation.abstractapi.com/v1/?api_key=3fd8d367a42a45288da33b6892bb1548')
+  }
 
+  public postLogin(user: any): Observable<any> {
+    return this._httpClient.post(`${this.urlBase}/login`, user)
+  }
 }

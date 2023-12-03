@@ -49,7 +49,7 @@
         <form [formGroup]="formBuscador" (ngSubmit)="enviarInput($event)" class="container-fluid">
           <div class="input-group">
             <button class="input-group-text" id="basic-addon1" style="font-size: small;">
-              <b class="bi bi-geo-alt" style="font-size: 16px;"></b>&nbsp; Lanus</button>
+              <b class="bi bi-geo-alt" style="font-size: 16px;"></b>&nbsp; {{geoUbicacion}}</button>
             <input type="text" class="form-control" placeholder="Servicios a buscar..." aria-label="Username"
               aria-describedby="basic-addon1" formControlName="buscar">
             <button class="input-group-text" id="btn-input">
@@ -58,7 +58,7 @@
           </div>
         </form>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-success" type="button" [routerLink]="['/perfil']">Ingresa</button>
+          <button class="btn btn-success" type="button" [routerLink]="['/login']">Ingresa</button>
         </div>
       </div>
     </div>
