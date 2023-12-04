@@ -9,28 +9,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./resultados.component.css']
 })
 export class ResultadosComponent implements OnInit {
-  /* public listaProvedores: IServices[] = []
-  public loading: boolean = true
-  constructor(private _apiService: ApiService,
-    private _router: Router) { }
-
-  ngOnInit(): void {
-    this._apiService.getPrestadores().subscribe({
-      next: (data: IServices[]) => {
-        console.log(data)
-        this.listaProvedores = data;
-        this.loading = false;
-      },
-      error: (error: any) => {
-        this.loading = false;
-      },
-    });
-  }
-
-  buscar(descripcion: string) {
-    this._router.navigate(['/prestadores', descripcion])
-  }*/
-  //servicio?: IServices
   public listaProvedores: IServices[] = []
   loading: boolean = true
   error: boolean = false

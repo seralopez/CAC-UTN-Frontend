@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { ApiService } from 'src/app/services/api.service';
 export class LoginComponent {
   email!: string;
   password!: string;
+  error: boolean = true
+  errorMsg: string = ''
 
   constructor(private _apiService: ApiService) { }
 
@@ -16,10 +19,11 @@ export class LoginComponent {
     const usuario = { email: this.email, password: this.password };
     this._apiService.postLogin(usuario).subscribe({
       next: (data) => {
-        console.log(data)
+        localStorage.setItem('token', data.usuario_token);
+        this.error = false;
       },
       error: (error: any) => {
-        console.log(error.error.msg)
+        this.errorMsg = error.error.msg
       }
     })
   }
