@@ -58,7 +58,7 @@
           </div>
         </form>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-success" type="button" [routerLink]="['/login']">Ingresa</button>
+          <button *ngIf="!login" class="btn btn-success" type="button" [routerLink]="['/login']">{{nombre}}</button>
         </div>
       </div>
     </div>

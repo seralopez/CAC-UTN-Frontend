@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { IServices } from "../models/servicio.model"
 import { Perfil } from "../models/perfil.model"
 
@@ -27,5 +27,21 @@ export class ApiService {
 
   public postLogin(user: any): Observable<any> {
     return this._httpClient.post(`${this.urlBase}/login`, user)
+  }
+
+  private stringSource = new Subject<string>();
+  stringEnviado$ = this.stringSource.asObservable();
+
+  enviarString(stringEnviado: string) {
+    this.stringSource.next(stringEnviado);
+  }
+
+  getName() {
+    const localName = localStorage.getItem('name');
+    if (localName === null) {
+      return 'no'
+    } else {
+      return localName
+    }
   }
 }

@@ -12,4 +12,8 @@ export class InicioComponent {
   buscar(datos: string, valor: string) {
     this._router.navigate(['/prestadores', datos, valor])
   }
+  //this._apiService.stringEnviado$.subscribe((stringEnviado) => {
+  // this.nombre = 'Hola\b' + stringEnviado;
+  //})
+
 }

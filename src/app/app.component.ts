@@ -17,10 +17,11 @@ export class AppComponent implements OnInit {
   )
 
   public listaProvedores: IServices[] = []
-  loading: boolean = true
+  public login: boolean = false
   error: string = ''
   geoUbicacion: string = ''
   geoLatLong: string = ''
+  nombre: string | undefined
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -46,10 +47,31 @@ export class AppComponent implements OnInit {
         console.log(error.error.msg)
       }
     })*/
+
+
+
+    //this._apiService.stringEnviado$.subscribe((stringEnviado) => {
+    // this.nombre = 'Hola\b' + stringEnviado;
+    //})
+    this.getName();
+
+  }
+  getName() {
+    const localName = this._apiService.getName()
+    if (localName == 'no') {
+      this.login = false
+      this.nombre = 'Ingresa'
+    } else {
+      this.login = true
+      this.nombre = localName
+    }
   }
 
   enviarInput(event: Event) {
     event.preventDefault();
     this._router.navigate(['/prestadores', 'buscador', this.formBuscador.value.buscar])
   }
+
+
+
 }
