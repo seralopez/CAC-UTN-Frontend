@@ -1,0 +1,16 @@
+.imagen-perfil {
+    width: 64px;
+    height: 64px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url('https://robohash.org/doloremmaiorescorporis.png?size=64x64&set=set1');
+    background-size: cover;
+    background-position: center;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
