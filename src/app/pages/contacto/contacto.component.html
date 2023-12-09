@@ -1,5 +1,5 @@
-<div class="container">
-    <main>
+<div class="container" style="margin: 20px;">
+    <main *ngIf="!error">
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="/assets/img/contacto.png" alt="">
             <h2>Contacto</h2>
@@ -8,63 +8,67 @@
         </div>
 
         <div class="row g-5">
-            <div class="col-md-5 col-lg-4 order-md-last">
+            <div class="col-md-5 col-lg-4 order-md-last" *ngFor="let perfil of dataPerfil">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-primary">Servicio</span>
-                    <span class="badge bg-primary rounded-pill">Plomero</span>
+                    <span class="badge bg-primary rounded-pill">{{perfil?.servicios_nombre}}</span>
                 </h4>
                 <div class="contenedor">
-                    <div class="imagen-perfil"></div>
+                    <div>
+                        <img class="imagen-perfil" src={{perfil?.usuario_foto}}>
+                    </div>
                 </div>
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
-                            <h6 class="my-0">Mario Bros</h6>
+                            <h6 class="my-0">{{perfil?.usuario_nombre}} {{perfil?.usuario_apellido}}</h6>
                         </div>
-                        <small class="text-body-secondary">5 *</small>
+                        <small class="text-body-secondary">{{perfil?.datos_calificacion}} <i
+                                class="bi calificacion bi-star-fill"></i></small>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
                             <h6 class="my-0">Ultima conexion</h6>
                         </div>
-                        <small class="text-body-secondary">2023-12-03 16:02:15</small>
+                        <small class="text-body-secondary">{{perfil?.usuario_ultConec}}</small>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
-                            <h6 class="my-0">Celular</h6>
+                            <h6 class="my-0">Telefono</h6>
                         </div>
-                        <small class="text-body-secondary">1523568980</small>
+                        <small class="text-body-secondary">{{perfil?.datos_telefono}}</small>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
                             <h6 class="my-0">Correo</h6>
                         </div>
-                        <small class="text-body-secondary">mario.bros@nintendo.com</small>
+                        <small class="text-body-secondary">{{perfil?.usuario_correo}}</small>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
                             <h6 class="my-0">Distancia</h6>
                         </div>
-                        <small class="text-body-secondary">3km.</small>
+                        <small class="text-body-secondary">{{perfil?.datos_telefono}}</small>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                         <div>
                             <h6 class="my-0">Disponibilidad</h6>
                         </div>
-                        <small class="text-body-secondary">Manana</small>
+                        <small class="text-body-secondary">{{perfil?.datos_disponibilidad}}</small>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-7 col-lg-8">
+            <div class="col-md-7 col-lg-8" *ngFor="let usuario of dataUsuario">
                 <h4 class="mb-3">Datos de contacto</h4>
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation" novalidate [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
                     <div class="row g-3">
                         <div class="col-12">
                             <label for="in-calle" class="form-label">Tu direccion</label>
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><b class="bi bi-geo-alt"
                                         style="font-size: 16px;"></b></span>
-                                <input type="text" class="form-control" id="in-calle" value="Calle 123" required>
+                                <input type="text" class="form-control" id="in-calle" value="{{usuario?.datos_calle}}"
+                                    required formControlName="name">
                                 <div class="invalid-feedback">
                                     Se necesita indicar direccion
                                 </div>
@@ -76,7 +80,7 @@
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><b class="bi bi-envelope-at"
                                         style="font-size: 16px;"></b></span>
-                                <input type="email" class="form-control" id="email" value="you@example.com">
+                                <input type="email" class="form-control" id="email" value="{{usuario?.usuario_correo}}">
                             </div>
                         </div>
 
@@ -85,7 +89,8 @@
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><b class="bi bi-phone"
                                         style="font-size: 16px;"></b></span>
-                                <input type="number" class="form-control" id="telefono" value="1568322240">
+                                <input type="number" class="form-control" id="telefono"
+                                    value="{{usuario?.datos_telefono}}">
                             </div>
                         </div>
 
@@ -96,7 +101,7 @@
                                         style="font-size: 16px;"></b></span>
                                 <select class="form-select" id="turno" required>
                                     <option value="">Elegir...</option>
-                                    <option>Manana</option>
+                                    <option>Mañana</option>
                                     <option>Tarde</option>
                                     <option>Noche</option>
                                 </select>
@@ -149,4 +154,11 @@
             </div>
         </div>
     </main>
+</div>
+<div *ngIf="error" style="align-items: center;">
+    <div class="container px-4 py-5">
+        <p><span class="badge text-bg-danger">{{errorMsg}}</span></p>
+        <p>· Revisá los datos ingresados.</p>
+        <p>· Navegá por las categorías para encontrar un servicio</p>
+    </div>
 </div>

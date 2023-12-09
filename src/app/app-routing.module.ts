@@ -8,7 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'contacto', component: ContactoComponent },
+  { path: 'contacto/:id', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'perfil/:id', component: PerfilComponent },
   { path: 'prestadores', component: ResultadosComponent },

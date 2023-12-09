@@ -4,7 +4,7 @@
         <div class="col" *ngFor="let servicio of listaProvedores">
             <a href="/perfil/{{servicio?.usuario_id}}">
                 <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg cartas" style="
-                background-image: url('/assets/img/{{servicio?.usuario_foto}}.png');">
+                background-image: url('/assets/img/{{servicio?.servicios_nombre}}.png');">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                         <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{servicio?.usuario_nombre}}
                             {{servicio?.usuario_apellido}}</h3>
@@ -28,5 +28,5 @@
         <p><span class="badge text-bg-danger">{{errorMsg}}</span></p>
         <p>· Revisá la ortografía de la palabra.</p>
         <p>· Utilizá palabras más genéricas o menos palabras.</p>
-        <p>· Navegá por las categorías para encontrar un producto similar</p>
+        <p>· Navegá por las categorías para encontrar un servicio similar</p>
     </div>

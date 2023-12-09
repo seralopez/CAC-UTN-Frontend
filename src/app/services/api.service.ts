@@ -21,6 +21,11 @@ export class ApiService {
     return this._httpClient.get<IServices[]>(`${this.urlBase}/perfil/${id}`);
   }
 
+  public getToken(): Observable<IServices[]> {
+    const token = localStorage.getItem('token');
+    return this._httpClient.get<IServices[]>(`${this.urlBase}/api/${token}`);
+  }
+
   public getGeo() {
     return this._httpClient.get('https://ipgeolocation.abstractapi.com/v1/?api_key=3fd8d367a42a45288da33b6892bb1548')
   }
@@ -29,6 +34,9 @@ export class ApiService {
     return this._httpClient.post(`${this.urlBase}/login`, user)
   }
 
+  public postTrabajo(job: any): Observable<any> {
+    return this._httpClient.post(`${this.urlBase}/trabajo/nuevo`, job)
+  }
   private stringSource = new Subject<string>();
   stringEnviado$ = this.stringSource.asObservable();
 
