@@ -16,11 +16,18 @@ export class ContactoComponent implements OnInit {
   loading: boolean = true
   error: string = ''
   errorMsg: string = ''
+  ok: string = ''
 
   checkoutForm = this.formBuilder.group({
-    name: ''
+    prestador: 0,
+    usuario: 0,
+    observacion: '',
+    calle: '',
+    email: '',
+    telefono: '',
+    turno: '',
+    trabajo: '',
   });
-
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -35,9 +42,6 @@ export class ContactoComponent implements OnInit {
       next: (data) => {
         localStorage.setItem('token', data.usuario_token);
         localStorage.setItem('name', data.usuario_nombre);
-        //this._apiService.enviarString(data.usuario_nombre)
-        //this.error = false;
-        //this._router.navigateByUrl("/");
       },
       error: (error: any) => {
         this.errorMsg = error.error.msg
@@ -46,7 +50,15 @@ export class ContactoComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this._apiService.postTrabajo(this.checkoutForm.value).subscribe({
+      next: (data: string) => {
+        this.ok = data
+      },
+      error: (error: any) => {
+        this.error = error.error.msg
+        this.errorMsg = error.error.msg
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -57,13 +69,17 @@ export class ContactoComponent implements OnInit {
           next: (data: IServices[]) => {
             this.dataUsuario = data
             this.loading = false
-
+            this.checkoutForm.controls['usuario'].setValue(data[0]['usuario_id'])
+            this.checkoutForm.controls['calle'].setValue(data[0]['datos_calle'])
+            this.checkoutForm.controls['email'].setValue(data[0]['usuario_correo'])
+            this.checkoutForm.controls['telefono'].setValue(String(data[0]['datos_telefono']))
             this._activatedRoute.params.subscribe({
               next: (params: Params) => {
                 this._apiService.getUsuario(Number(params['id'])).subscribe({
                   next: (data: IServices[]) => {
                     this.dataPerfil = data
                     this.loading = false
+                    this.checkoutForm.controls['prestador'].setValue(data[0]['usuario_id'])
                     if (this.dataUsuario[0]['usuario_id'] === this.dataPerfil[0]['usuario_id']) {
                       this.error = 'No se puede contactar un mismo usuario'
                       this.errorMsg = 'No se puede contactar un mismo usuario'

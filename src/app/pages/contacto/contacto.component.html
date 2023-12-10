@@ -1,5 +1,5 @@
 <div class="container" style="margin: 20px;">
-    <main *ngIf="!error">
+    <main *ngIf="!error && !ok">
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="/assets/img/contacto.png" alt="">
             <h2>Contacto</h2>
@@ -67,8 +67,8 @@
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><b class="bi bi-geo-alt"
                                         style="font-size: 16px;"></b></span>
-                                <input type="text" class="form-control" id="in-calle" value="{{usuario?.datos_calle}}"
-                                    required formControlName="name">
+                                <input type="text" class="form-control" id="calle" value="{{usuario?.datos_calle}}"
+                                    required formControlName="calle">
                                 <div class="invalid-feedback">
                                     Se necesita indicar direccion
                                 </div>
@@ -80,7 +80,7 @@
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><b class="bi bi-envelope-at"
                                         style="font-size: 16px;"></b></span>
-                                <input type="email" class="form-control" id="email" value="{{usuario?.usuario_correo}}">
+                                <input type="email" class="form-control" id="email" formControlName="email">
                             </div>
                         </div>
 
@@ -89,8 +89,7 @@
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><b class="bi bi-phone"
                                         style="font-size: 16px;"></b></span>
-                                <input type="number" class="form-control" id="telefono"
-                                    value="{{usuario?.datos_telefono}}">
+                                <input type="number" class="form-control" id="telefono" formControlName="telefono">
                             </div>
                         </div>
 
@@ -99,11 +98,11 @@
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><b class="bi bi-clock-history"
                                         style="font-size: 16px;"></b></span>
-                                <select class="form-select" id="turno" required>
+                                <select class="form-select" id="turno" required formControlName="turno">
                                     <option value="">Elegir...</option>
-                                    <option>Mañana</option>
-                                    <option>Tarde</option>
-                                    <option>Noche</option>
+                                    <option value="Mañana">Mañana</option>
+                                    <option value="Tarde">Tarde</option>
+                                    <option value="Noche">Noche</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Elige una opcion.
@@ -116,7 +115,7 @@
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><b class="bi bi-info"
                                         style="font-size: 16px;"></b></span>
-                                <input type="text" class="form-control" id="observacion" value="">
+                                <input type="text" class="form-control" id="observacion" formControlName="observacion">
                             </div>
                         </div>
                     </div>
@@ -124,31 +123,11 @@
                     <hr class="my-4">
                     <label for="texto" class="form-label">Trabajo a solicitar</label>
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Descripcion del trabajo a realizar"
-                            id="floatingTextarea"></textarea>
-                    </div>
-                    <hr class="my-4">
-
-                    <h4 class="mb-3">Medio de pago</h4>
-
-                    <div class="my-3">
-                        <div class="form-check">
-                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked
-                                required>
-                            <label class="form-check-label" for="credit">Efectivo/Debito</label>
-                        </div>
-                        <div class="form-check">
-                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="debit">Tarjeta de credito</label>
-                        </div>
-                        <div class="form-check">
-                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="paypal">Billetera virtual</label>
-                        </div>
+                        <textarea class="form-control" placeholder="Descripcion del trabajo a realizar" required
+                            id="floatingTextarea" formControlName="trabajo"></textarea>
                     </div>
 
                     <hr class="my-4">
-
                     <button class="w-100 btn btn-primary btn-lg" type="submit">Enviar</button>
                 </form>
             </div>
@@ -160,5 +139,12 @@
         <p><span class="badge text-bg-danger">{{errorMsg}}</span></p>
         <p>· Revisá los datos ingresados.</p>
         <p>· Navegá por las categorías para encontrar un servicio</p>
+    </div>
+</div>
+<div *ngIf="ok" style="align-items: center;">
+    <div class="container px-4 py-5">
+        <b class="bi bi-calendar-check" style="font-size: 128px;color: green;"></b>
+        <p>Tu mensaje fue enviado!.</p>
+        <p>Estate atento a la respuesta del prestador y coordinar el trabajo.</p>
     </div>
 </div>

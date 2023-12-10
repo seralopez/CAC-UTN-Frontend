@@ -22,9 +22,9 @@ export class LoginComponent {
       next: (data) => {
         localStorage.setItem('token', data.usuario_token);
         localStorage.setItem('name', data.usuario_nombre);
-        //this._apiService.enviarString(data.usuario_nombre)
+        this._apiService.enviarString(data.usuario_nombre)
         this.error = false;
-        this._router.navigateByUrl("/");
+        this._router.navigate(["/"]);
       },
       error: (error: any) => {
         this.errorMsg = error.error.msg

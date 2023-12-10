@@ -18,10 +18,11 @@ export class AppComponent implements OnInit {
 
   public listaProvedores: IServices[] = []
   public login: boolean = false
+  nombre: string | undefined
   error: string = ''
   geoUbicacion: string = ''
   geoLatLong: string = ''
-  nombre: string | undefined
+
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -48,11 +49,6 @@ export class AppComponent implements OnInit {
       }
     })*/
 
-
-
-    //this._apiService.stringEnviado$.subscribe((stringEnviado) => {
-    // this.nombre = 'Hola\b' + stringEnviado;
-    //})
     this.getName();
 
   }
@@ -71,7 +67,4 @@ export class AppComponent implements OnInit {
     event.preventDefault();
     this._router.navigate(['/prestadores', 'buscador', this.formBuscador.value.buscar])
   }
-
-
-
 }
