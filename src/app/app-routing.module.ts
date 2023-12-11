@@ -5,6 +5,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { LoginComponent } from './pages/login/login.component';
+import { TrabajosComponent } from './pages/trabajos/trabajos.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'perfil/:id', component: PerfilComponent },
   { path: 'prestadores', component: ResultadosComponent },
   { path: 'prestadores/:datos/:valor', component: ResultadosComponent },
+  { path: 'trabajos', component: TrabajosComponent },
   { path: '**', redirectTo: '' }
 ];
 

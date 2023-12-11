@@ -7,6 +7,52 @@
     </symbol>
 </svg>
 
+<div *ngIf="login" class="px-3 py-2 text-bg-dark border-bottom">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-center">
+
+            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                <li>
+                    <a [routerLink]="['/']" class="nav-link text-white">
+                        <span class="bi bi-house-door">
+                        </span>
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/trabajos']" class="nav-link text-white">
+                        <span class="bi-person-workspace" width="24" height="24">
+                        </span>
+                        Trabajos
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <span class="bi-envelope " width="24" height="24">
+                        </span>
+                        Mensajes
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <span class="bi-person-gear" width="24" height="24">
+                        </span>
+                        Mis datos
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <u class="bi bi-box-arrow-right " width="24" height="24">
+
+                        </u>
+                        Salir
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <div class="container px-4 py-5" id="hanging-icons">
     <h2 class="pb-2 border-bottom">Principales busquedas</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">

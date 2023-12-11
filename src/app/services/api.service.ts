@@ -37,6 +37,10 @@ export class ApiService {
   public postTrabajo(job: any): Observable<any> {
     return this._httpClient.post(`${this.urlBase}/trabajo/nuevo`, job)
   }
+
+  public postTrabajos(token: any): Observable<any> {
+    return this._httpClient.post(`${this.urlBase}/trabajos`, token)
+  }
   private stringSource = new Subject<string>();
   stringEnviado$ = this.stringSource.asObservable();
 

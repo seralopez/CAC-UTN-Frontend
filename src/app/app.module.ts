@@ -10,7 +10,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './pages/login/login.component'
+import { LoginComponent } from './pages/login/login.component';
+import { TrabajosComponent } from './pages/trabajos/trabajos.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './pages/login/login.component'
     PerfilComponent,
     ContactoComponent,
     InicioComponent,
-    LoginComponent
+    LoginComponent,
+    TrabajosComponent
   ],
   imports: [
     BrowserModule,

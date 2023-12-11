@@ -1,0 +1,41 @@
+<div class="container" style="margin: 20px;">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center mb-5">
+            <h2 class="heading-section">Resultados</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-wrap">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Nombre/Apellido</th>
+                            <th>Fecha</th>
+                            <th>Trabajo</th>
+                            <th>Presupuesto</th>
+                            <th>Observaciones</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="alert" role="alert" *ngFor="let dato of datos">>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>{{dato?.trabajo_descripcion}}</td>
+                            <td>
+                                aaa
+                            </td>
+                            <td>Otto</td>
+                            <td>
+                                <span class="badge rounded-pill text-bg-success">Activo</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,11 +17,9 @@ export class ResultadosComponent implements OnInit {
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _apiService: ApiService
-
   ) { }
 
   ngOnInit(): void {
-
     this._activatedRoute.params.subscribe({
       next: (params: Params) => {
         this._apiService.getPrestadores(String(params['datos']), String(params['valor'])).subscribe({
@@ -42,7 +40,4 @@ export class ResultadosComponent implements OnInit {
       }
     })
   }
-
-
-
 }
