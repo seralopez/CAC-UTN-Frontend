@@ -23,7 +23,6 @@ export class TrabajosComponent implements OnInit {
         const envio = { token: `${token}` };
         this._apiService.postTrabajos(envio).subscribe({
           next: (data: []) => {
-            console.log(data)
             this.datos = data
           },
           error: (error: any) => {

@@ -11,7 +11,6 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>Servicio</th>
-                            <th>Nombre/Apellido</th>
                             <th>Fecha</th>
                             <th>Trabajo</th>
                             <th>Presupuesto</th>
@@ -20,17 +19,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="alert" role="alert" *ngFor="let dato of datos">>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                        <tr class="alert" role="alert" *ngFor="let dato of datos">
+                            <th scope="row">{{dato?.servicios_nombre}}</th>
+                            <td>{{dato?.trabajo_fecha | date:'dd-MM-yyyy HH:mm'}}</td>
                             <td>{{dato?.trabajo_descripcion}}</td>
+                            <td>{{dato?.trabajo_presupuesto}}</td>
+                            <td>{{dato?.trabajo_comentario}}</td>
                             <td>
-                                aaa
-                            </td>
-                            <td>Otto</td>
-                            <td>
-                                <span class="badge rounded-pill text-bg-success">Activo</span>
+                                <span
+                                    [ngClass]="{'badge-success': dato?.trabajo_estado === 'Finalizado', 'badge-warning': dato?.trabajo_estado === 'Consulta', 'badge-danger': dato?.trabajo_estado === 'Rechazado'}">{{dato?.trabajo_estado}}</span>
                             </td>
                         </tr>
                     </tbody>
