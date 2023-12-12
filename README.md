@@ -11,6 +11,10 @@
   </p>
 </div>
 
+Datos de acceso :
+* Usuario : codo@utn.com.ar
+* Contrase : codo123
+
 ## Contexto 🚀
 Se busca desarrollar un sistema integral web que satisfaga las necesidades actuales del
 mercado en la búsqueda y contratación de profesionales especializados en una variedad de
