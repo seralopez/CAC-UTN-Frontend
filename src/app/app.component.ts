@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // GEOAPI -----------------------------------------
-    /*this._activatedRoute.params.subscribe({
+    this._activatedRoute.params.subscribe({
       next: () => {
         this._apiService.getGeo().subscribe({
           next: (data: any) => {
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
       error: (error: any) => {
         console.log(error.error.msg)
       }
-    })*/
+    })
 
     this.getName();
 
